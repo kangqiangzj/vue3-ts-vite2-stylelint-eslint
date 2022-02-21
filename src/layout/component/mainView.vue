@@ -1,0 +1,38 @@
+<!--
+ * @Description: 文件描述
+ * @Author: zhangjie
+ * @Date: 2022-02-16 08:50:10
+ * @LastEditors: zhangjie
+ * @LastEditTime: 2022-02-18 16:31:28
+ * @FilePath: \website\src\layout\component\mainView.vue
+-->
+<template>
+  <el-container class="layout-container">
+    <Aside />
+  </el-container>
+</template>
+
+<script lang="ts">
+import { getCurrentInstance, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import { useStore } from 'store/index';
+import Aside from './component/aside.vue';
+export default {
+  name: 'layoutDefaults',
+  components: { Aside },
+  setup() {
+    const { proxy } = getCurrentInstance() as any;
+    const store = useStore();
+    const route = useRoute();
+
+    // 监听路由的变化
+    watch(
+      () => route.path,
+      () => {
+        proxy.$refs.layoutDefaultsScrollbarRef.wrap.scrollTop = 0;
+      },
+    );
+    return {};
+  },
+};
+</script>
