@@ -3,7 +3,7 @@
  * @Author: zhangjie
  * @Date: 2022-02-21 16:11:54
  * @LastEditors: zhangjie
- * @LastEditTime: 2022-02-21 16:35:59
+ * @LastEditTime: 2022-02-21 17:02:13
  * @FilePath: \website\.commitlintrc.js
  */
 module.exports = {
@@ -13,7 +13,9 @@ module.exports = {
       2,
       "always",
       [
-        "feat", // 新功能（feature）
+        'ui',
+        'init',
+        "feat", // 新功能（feature）  ex:  git commit -m "feat(): 添加新功能"
         "fix", // 修补bug
         "docs", // 文档（documentation）
         "style", // 格式（不影响代码运行的变动）
@@ -22,6 +24,8 @@ module.exports = {
         "revert", // 回滚
         "config", // 构建过程或辅助工具的变动
         "chore", // 其他改动
+        'add',
+        'del'
       ],
     ],
     "type-empty": [2, "never"], // <type> 不能为空
